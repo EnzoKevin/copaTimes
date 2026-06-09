@@ -1,0 +1,32 @@
+<!-- components/team-card/team-card.component.html -->
+<div class="flex items-start justify-between w-full">
+  <div class="flex items-center gap-md">
+    <div class="w-14 h-10 rounded shadow-sm overflow-hidden bg-surface-dim">
+      <img class="w-full h-full object-cover" [src]="team.flagUrl" [alt]="team.name" />
+    </div>
+    <div>
+      <h3 class="font-headline-md text-headline-md leading-none">{{ team.name }}</h3>
+      <p class="font-label-sm text-label-sm text-on-surface-variant">{{ team.confederation }}</p>
+    </div>
+  </div>
+  <span
+    (click)="toggleFavorite($event)"
+    class="material-symbols-outlined text-primary group-hover:scale-125 transition-transform"
+  >
+    {{ team.isFavorite ? 'star' : 'star_border' }}
+  </span>
+</div>
+<div class="grid grid-cols-3 gap-xs pt-base border-t border-outline-variant w-full">
+  <div class="text-center">
+    <p class="text-[10px] uppercase font-bold text-on-surface-variant opacity-50">Points</p>
+    <p class="font-headline-md text-headline-md text-primary">{{ team.points }}</p>
+  </div>
+  <div class="text-center">
+    <p class="text-[10px] uppercase font-bold text-on-surface-variant opacity-50">Rank</p>
+    <p class="font-headline-md text-headline-md text-on-surface">{{ team.rank }}</p>
+  </div>
+  <div class="text-center">
+    <p class="text-[10px] uppercase font-bold text-on-surface-variant opacity-50">Group</p>
+    <p class="font-headline-md text-headline-md text-on-surface">{{ team.group }}</p>
+  </div>
+</div>

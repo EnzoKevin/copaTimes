@@ -1,0 +1,68 @@
+<!-- components/top-navbar/top-navbar.component.html -->
+<header class="bg-surface shadow-sm docked full-width top-0 sticky z-50">
+  <div class="flex justify-between items-center w-full px-margin-desktop h-16">
+    <div class="flex items-center gap-md">
+      <span class="font-headline-md text-headline-md font-bold text-primary"
+        >World Cup Manager</span
+      >
+      <div class="hidden md:flex ml-lg gap-md">
+        <a
+          class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary py-xs"
+          href="#"
+          >Dashboard</a
+        >
+        <a
+          class="font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-colors py-xs px-xs rounded-lg"
+          href="#"
+          >Teams</a
+        >
+        <a
+          class="font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-colors py-xs px-xs rounded-lg"
+          href="#"
+          >Analytics</a
+        >
+      </div>
+    </div>
+    <div class="flex items-center gap-md">
+      <div
+        class="relative hidden sm:block"
+        [class.ring-2]="isSearchFocused"
+        [class.ring-primary]="isSearchFocused"
+        class="rounded-full transition-all"
+      >
+        <span
+          class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant"
+          >search</span
+        >
+        <input
+          [(ngModel)]="searchQuery"
+          (focus)="isSearchFocused = true"
+          (blur)="isSearchFocused = false"
+          class="pl-10 pr-4 py-2 bg-surface-container rounded-full border-none focus:outline-none w-64 text-label-md"
+          placeholder="Search teams..."
+          type="text"
+        />
+      </div>
+      <div class="flex items-center gap-base">
+        <button
+          class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors cursor-pointer active:scale-95"
+        >
+          notifications
+        </button>
+        <button
+          class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors cursor-pointer active:scale-95"
+        >
+          settings
+        </button>
+        <div
+          class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed cursor-pointer active:scale-95 transition-transform"
+        >
+          <img
+            alt="User profile avatar"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5fvWkAbo8w_5AeThk5dB0wMrN0tciKPg_kJArfcMiLUkm_ja1YAuzrV3laoHABLys4Qv3A8waI5uhk1mmlJ3otnnqbbIsHpP66eQnk6WQl4KCfBpUXMqEWCGrlZn542Rce24mEO-oWjauNNpUqKcwGg2wip-ST88gHrasSAFPrHZBjws93M7QsLTJTjDnNcyW5KgM7drIHWcZseg82L5Vjd-3ADQLb6JVFTcNoBruzZg6e9lZhtYypto1HSwKd9ny1XjoA-hWftc"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
