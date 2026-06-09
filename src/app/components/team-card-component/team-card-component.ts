@@ -13,6 +13,7 @@ export interface Team {
 
 @Component({
   selector: 'app-team-card',
+  standalone: false,
   templateUrl: './team-card-component.html',
 })
 export class TeamCardComponent {

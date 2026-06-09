@@ -1,11 +1,10 @@
 // dashboard.component.ts
 import { Component } from '@angular/core';
 import { Team } from '../team-card-component/team-card-component';
-import { MobileNavbarComponent } from '../mobile-navbar-component/mobile-navbar-component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [MobileNavbarComponent],
+  standalone: false,
   templateUrl: './dashboard-component.html',
 })
 export class DashboardComponent {

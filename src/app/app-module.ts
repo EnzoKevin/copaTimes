@@ -2,6 +2,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { App } from './app';
 
 import { DashboardComponent } from './components/dashboard-component/dashboard-component';
 import { TopNavbarComponent } from './components/top-navbar/top-navbar';
@@ -13,7 +15,9 @@ import { GroupStandingsComponent } from './components/group-standings-component/
 import { UpcomingMatchComponent } from './components/upcoming-match-component/upcoming-match-component';
 
 @NgModule({
+  // 1. Em um app de módulo único, TODOS os seus componentes entram aqui:
   declarations: [
+    DashboardComponent,
     TopNavbarComponent,
     SidebarComponent,
     MobileNavbarComponent,
@@ -22,9 +26,11 @@ import { UpcomingMatchComponent } from './components/upcoming-match-component/up
     GroupStandingsComponent,
     UpcomingMatchComponent,
   ],
-  imports: [CommonModule, FormsModule, DashboardComponent],
-  exports: [
-    DashboardComponent, // Exportado caso seja chamado por outro módulo (ex: AppModule)
-  ],
+
+  // 2. Módulos do Angular que dão suporte para os recursos (como o ngModel na busca)
+  imports: [BrowserModule, FormsModule],
+
+  providers: [],
+  bootstrap: [App],
 })
-export class DashboardModule {}
+export class AppModule {}

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-top-navbar',
   templateUrl: './top-navbar.html',
-  imports: [FormsModule],
+  standalone: false,
 })
 export class TopNavbarComponent {
   searchQuery: string = '';
