@@ -20,15 +20,11 @@ import { UpcomingMatchComponent } from './components/upcoming-match-component/up
     BentoStatsComponent,
     TeamCardComponent,
     GroupStandingsComponent,
-    UpcomingMatchComponent
+    UpcomingMatchComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    DashboardComponent
-  ],
+  imports: [CommonModule, FormsModule, DashboardComponent],
   exports: [
-    DashboardComponent // Exportado caso seja chamado por outro módulo (ex: AppModule)
-  ]
+    DashboardComponent, // Exportado caso seja chamado por outro módulo (ex: AppModule)
+  ],
 })
-export class DashboardModule { }
+export class DashboardModule {}
