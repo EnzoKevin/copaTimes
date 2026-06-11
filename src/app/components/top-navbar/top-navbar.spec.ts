@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TopNavbarComponent } from './top-navbar';
+import { FormsModule } from '@angular/forms';
 
-import { TopNavbar } from './top-navbar';
-
-describe('TopNavbar', () => {
-  let component: TopNavbar;
-  let fixture: ComponentFixture<TopNavbar>;
+describe('TopNavbarComponent', () => {
+  let component: TopNavbarComponent;
+  let fixture: ComponentFixture<TopNavbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TopNavbar],
+      imports: [FormsModule],
+      declarations: [TopNavbarComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TopNavbar);
+    fixture = TestBed.createComponent(TopNavbarComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

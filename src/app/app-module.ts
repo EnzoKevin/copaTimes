@@ -17,6 +17,7 @@ import { UpcomingMatchComponent } from './components/upcoming-match-component/up
 @NgModule({
   // 1. Em um app de módulo único, TODOS os seus componentes entram aqui:
   declarations: [
+    App,
     DashboardComponent,
     TopNavbarComponent,
     SidebarComponent,

@@ -2,7 +2,7 @@
 <app-top-navbar></app-top-navbar>
 
 <div class="flex min-h-[calc(100vh-4rem)]">
-  <app-sidebar></app-sidebar>
+  <app-sidebar-component></app-sidebar-component>
 
   <!-- Main Canvas -->
   <main class="flex-1 md:ml-64 p-margin-mobile md:p-margin-desktop overflow-x-hidden">
@@ -20,7 +20,7 @@
     </section>
 
     <!-- Bento Statistics Panel -->
-    <app-bento-stats></app-bento-stats>
+    <app-bento-stats-component></app-bento-stats-component>
 
     <!-- Split Content View -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
@@ -33,8 +33,10 @@
           </button>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
-          <!-- Loop Dinâmico de Seleções -->
-          <app-team-card *ngFor="let team; data: of; recentTeams" [team]="team"></app-team-card>
+          @for (team of recentTeams; track team.id) {
+            <!-- Loop Dinâmico de Seleções -->
+            <app-team-card [team]="team"></app-team-card>
+          }
 
           <!-- Placeholder para Criar Nova Seleção -->
           <div
@@ -64,8 +66,8 @@
           </div>
         </div>
 
-        <app-group-standings></app-group-standings>
-        <app-upcoming-match></app-upcoming-match>
+        <app-group-standings-component></app-group-standings-component>
+        <app-upcoming-match-component></app-upcoming-match-component>
       </div>
     </div>
 
@@ -98,4 +100,4 @@
 </div>
 
 <!-- Mobile Tab Bar -->
-<app-mobile-navbar></app-mobile-navbar>
+<app-mobile-navbar-component></app-mobile-navbar-component>
