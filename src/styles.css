@@ -1,3 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
 @import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  /* Cores baseadas no Material Design 3 usadas no seu HTML */
+  --color-primary: #2e7d32;
+  --color-primary-dark: #1b5e20;
+  --color-surface: #fefefe;
+  --color-surface-container: #f8faf9;
+  --color-surface-container-high: #e5e7eb;
+  --color-accent: #ffd700; /* Amarelo Copa */
+  --color-on-primary: #ffffff; /* White text on primary background */
+  --color-on-surface: #1a1c1e;
+  --color-on-surface-variant: #44474e;
+  --color-outline: #74777f;
+  --color-outline-variant: #c4c6cf;
+  --color-primary-fixed: #2d5a27;
+
+  /* Espaçamentos customizados */
+  --spacing-margin-desktop: 2rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-base: 1rem;
+
+  /* Escala de Tipografia Material Design 3 */
+  --font-size-display-lg: 2.5rem;
+  --line-height-display-lg: 3rem;
+  --font-size-body-lg: 1.125rem;
+  --line-height-body-lg: 1.75rem;
+  --font-size-headline-md: 1.75rem;
+  --line-height-headline-md: 2.25rem;
+  --font-size-label-md: 0.9rem;
+  --line-height-label-md: 1.3rem;
+}
+
+/* Reset e Estilos Base */
+@layer base {
+  body {
+    @apply bg-surface-container text-on-surface antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-outline-variant rounded-full hover:bg-outline transition-colors;
+  }
+}
+
+/* Estilos Utilitários Adicionais usados no App HTML */
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-outline-variant);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+@utility stadium-gradient {
+  background: linear-gradient(135deg, #1d6d3c 0%, #2a7e43 50%, #0f3d1e 100%);
+}
+
+@utility text-on-primary {
+  color: var(--color-on-primary);
+}
+
+@utility nav-item-active {
+  @apply relative text-primary after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-primary after:content-[''];
+}
